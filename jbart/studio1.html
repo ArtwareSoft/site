@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src1="studio/jbart___cam2.js"></script>
+<script type="text/javascript" src="studio/jbart.js"></script>
+<script type="text/javascript" src="studio/jbartApp.js"></script>
+<script type="text/javascript" src="studio/jbartEditor.js"></script>
+<script type="text/javascript" src="__cam2.js"></script>
+<link rel="stylesheet" type="text/css" href="default.css"/>
+<style>
+.Page_gallery { width:345px !important; height: 310px !important; background:url(preview.jpg) }
+.preview .section_header { }
+.bartdt_editpage { background:#F2FFE6; }
+.preview { padding-left:8px; }
+.try_it_yourself { padding: 10px;border: 1px solid #FC6;background: #FDFDDD;font-family: "Comic Sans MS";}
+.tit_title { font-size: 20px; font-weight: bold; }
+.hint:hover { text-decoration:underline; background:#FC6;  }
+.hint { font-size:12px; cursor:pointer; }
+</style>
+<script>
+function clk()
+{
+	window.top.open_video('#studio_video1',true);
+}
+</script>
+<body style="overflow:hidden">
+<div id="ajaxart_log_"></div>
+<div class="try_it_yourself">
+	<div class="tit_title">Try it yourself:</div>
+	Add field 'lcd size' with text pattern: <span style="color: darkBlue;">LCD Size:xx"</span>
+	&nbsp;&nbsp;&nbsp;
+	<span class="hint" onclick="clk();">(Click for video hint)</span>
+</div>
+<div id="ajaxart_loading" style="position:absolute;left:100px;top:100px; font-size:140%; padding:30px 30px 30px 70px; background: url('images/loading.gif') no-repeat 5px 50%;">Loading jBart Studio...</div>
+<div class="jBartWidget jBartWidget___cam2" style="max-width:500px"></div>
+<div style="height:1000px"/>
+</body>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Screen Sharing Widgets</title>
+  <link rel="stylesheet" type="text/css" href="artware.css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="start">
+	    <div class="artlogo">ARTWARE</div>
+	    <div class="line1"></div>
+	    <div class="line2"></div>
+	    <div class="product_name">Screen Sharing Widgets</div>
+	    <div class="lp_logo"></div>
+    </div>
+  </div>
+  
+  <div class="tabs">
+    <div class="start">
+    	<div class="tab selected" onclick="changetab(1)">Financial Calculator</div>
+    	<div class="tab" onclick="changetab(2)" style="display:none;">Products</div>
+    </div>
+    <div class="clear_both"></div>
+  </div>
+  
+  <div class="all_pages">
+    <div class="all_pages_content">
+    
+    <div class="page" id="financial_calculator">
+	  <div class="block block1">
+	    <div class="start">
+		    <div class="title">Watch the video</div>
+		    <div class="text">See the entire scenario played out from both
+the visitor and agent sides.</div>
+			<iframe style="height:330px" class="image tscplayer_inline embeddedObject" name="tsc_player" scrolling="no" frameborder="0" type="text/html" style="overflow:hidden;" src="http://www.screencast.com/users/yaniv-ben-yehuda/folders/Camtasia Studio/media/86f310f3-f67e-47d6-8ec2-6f306314d42e/embed" height="300" width="570" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+	    </div>
+	  </div>
+
+	  <div class="block block2">
+	    <div class="start">
+		    <div class="title">Provide online assistance with Pin Point Accuracy.</div>
+		    <div class="text">With Artware’s screen sharing widgets you can provide the most accurate advice at the perfect
+		timing. Your online chat agent will become a live financial advisor providing much richer and complete experience.</div>
+		    <img class="image" src="page1.jpg"></img>
+	    </div>
+	  </div>
+	  
+	  <div class="block block1">
+	    <div class="start">
+		    <div class="title">Give your online agents the right set of tools.</div>
+		    <div class="text">Implemented into Liveperson’s Agent Console, The LP Connect tab will provide your agents with
+	a whole new set of tools. Reaching out to visitors instantly, while providing high level of services has never been this fast and easy.</div>
+		    <img class="image" src="page2.jpg"></img>
+	    </div>
+	  </div>
+	
+	  <div class="block block2">
+	    <div class="start">
+		    <div class="title">Financial terms are not easy to understand.</div>
+		    <div class="text">Online calculators can provide great insight to future loan owner’s. How do you make sure they
+	make the best use out of the tools you provide online? We give your agent the ability to see what the visitor is doing on real-time, offer assistance
+	and even take action if necessary.</div>
+		    <img class="image" src="page3.jpg"></img>
+	    </div>
+	  </div>
+	  
+	</div>
+
+    <div class="page" id="products" style="display:none;">
+	  <div class="block block1">
+	    <div class="start">
+		    <div class="title">Agent can offer products to visitors.</div>
+		    <div class="text">The visitor sees the products and the chat simultaniously. They can have a dialog over suggested products.</div>
+		    <img class="image" src="page1.jpg"></img>
+	    </div>
+	  </div>
+	  
+	  <div class="block block2">
+	    <div class="start">
+		    <div class="title">Agent can browse the product catalog.</div>
+		    <div class="text">Agents can search and filter the catalog to find the right product to suggest to the visitor. The search results are fine tuned to the segmentation of the visitor.</div>
+		    <img class="image" src="page2.jpg"></img>
+	    </div>
+	  </div>
+	
+	  <div class="block block1">
+	    <div class="start">
+		    <div class="title">The visitor and agent collaborate together to find the right products</div>
+		    <div class="text">Visitor provides interests and preferences and the agent brings the expertize.</div>
+		    <img class="image" src="page3.jpg"></img>
+	    </div>
+	  </div>
+	  
+	  <div class="block block2">
+	    <div class="start">
+		    <div class="title">Watch the video</div>
+		    <div class="text">See the entire scenarion played out from both
+the visitor and agent sides.</div>
+		    <img class="image" src="page1.jpg"></img>
+	    </div>
+	  </div>
+
+	</div>
+	</div>
+  </div>
+  
+  <div class="footer">
+    <div class="start">
+	    <img src="informatica_logo.png" class="informatica_logo"></img>
+	    <img src="misrad_logo.png" class="misrad_logo"></img>
+	    <img src="liveperson_logo.png" class="liveperson_logo"></img>
+	    <img src="idf2_logo.png" class="idf2_logo"></img>
+	    <img src="pontis_logo.png" class="pontis_logo"></img>
+	    <img src="idf_logo.png" class="idf_logo"></img>
+	    <img src="clalit_logo.png" class="clalit_logo"></img>
+	    
+	    <div class="line">
+	      <div class="line1"></div>
+	      <div class="line2"></div>
+	      <div class="line3"></div>
+	    </div>
+	    
+	    <div class="bottom_line">
+	      <div class="copyright">Copyright © 2012 Artware Soft All Rights Reserved | info@artwaresoft.co.il </div>
+	    </div>
+    </div>
+  </div>
+  
+  
+  <script>
+    window.currentTabIndex = 1;
+
+    function changetab(index,noanimation) {
+        window.currentTabIndex = index;
+        location.hash = index;
+        fix(noanimation ? false : true);
+    }
+
+    jQuery(document).ready(function() {
+        fix();
+        window.onresize = function() { fix(); };
+    });
+    
+    function fix(usingAnimation) {
+		var screenWidth = window.innerWidth || (document.documentElement.clientWidth || document.body.clientWidth);
+        jQuery('.page').width(screenWidth);
+        console.log(usingAnimation ? 'animation' : 'static');
+
+        var left = screenWidth * (currentTabIndex-1);
+        var value = '-'+left+'px';
+        if (usingAnimation) {
+            jQuery('.all_pages_content').animate({'margin-left' : value });
+        } else {
+            jQuery('.all_pages_content').css('margin-left',value);
+        }
+
+        jQuery('.tab').removeClass('selected');
+        jQuery('.tabs .tab:nth-child('+currentTabIndex+')').addClass('selected');
+    }
+
+    if (location.hash) {
+	    try {
+	    	var newindex = parseInt(location.hash.substring(1));
+	    	if (newindex && newindex > 1) changetab(newindex,true);
+	    } catch(e) {}
+	}
+  </script>
+</body>
+</html>

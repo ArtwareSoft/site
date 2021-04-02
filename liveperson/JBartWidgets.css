@@ -1,0 +1,29 @@
+.lp_channel_jbartRichForm .in_chatline { color: #6B6B6A; }
+.lp_channel_jbartRichForm .text { margin-left: 46px; display: block; }
+.lp_channel_jbartRichForm .link { color: #658799; font-weight:bold; } 
+.lp_channel_jbartRichForm .link:hover { text-decoration: underline; cursor:pointer;}
+.lp_channel_jbartRichForm .icon { background-image: url('//dl.dropbox.com/u/24056024/lpdemo_debug/form-icon.png'); float:left; width:37px; height:30px; background-repeat:no-repeat; margin-top:1px;}
+.lp_channel_jbartRichForm .in_media { height: 256px; width: 300px;}
+.lp_channel_jbartRichForm .outer_lp_chat_message { background-color: #fcf7e4; border: 1px solid #f0d158; min-height: 35px;}
+.lp_channel_jbartRichForm .bubble span { background-image: url('//jbartapps.appspot.com/lp/images/html-arrow.gif'); }
+.lp_channel_jbartRichForm *:focus { outline: none; }
+
+.lp_channel_jbartProduct.in_chatline { color: #6B6B6A; }
+.lp_channel_jbartProduct .text { margin-left: 46px; display: block; }
+.lp_channel_jbartProduct .link { color: #658799; font-weight:bold; } 
+.lp_channel_jbartProduct .link:hover { text-decoration: underline; cursor:pointer;}
+.lp_channel_jbartProduct .icon { float:left;  height:42px; }
+.lp_channel_jbartProduct .in_media { height: 256px; width: 300px;}
+.lp_channel_jbartProduct .outer_lp_chat_message { background-color: #fcf7e4; border: 1px solid #f0d158; min-height: 45px;}
+.lp_channel_jbartProduct .bubble span { background-image: url('//jbartapps.appspot.com/lp/images/html-arrow.gif'); }
+.lp_channel_jbartProduct *:focus { outline: none; }
+
+.lp_channel_jbartProductLP.in_chatline { color: #6B6B6A; }
+.lp_channel_jbartProductLP .text { margin-left: 46px; display: block; }
+.lp_channel_jbartProductLP .link { color: #5F7D26; } 
+.lp_channel_jbartProductLP .link:hover { text-decoration: underline; cursor:pointer;}
+.lp_channel_jbartProductLP .icon { float:left;  height:42px; padding-right: 7px; }
+.lp_channel_jbartProductLP .in_media { height: 256px; width: 300px;}
+.lp_channel_jbartProductLP .outer_lp_chat_message { background-color: #e0edbf; border: 1px solid #d6d5d5; min-height: 45px;}
+.lp_channel_jbartProductLP .bubble span { background-image: url('//jbartapps.appspot.com/lp/images/html-arrow.gif'); }
+.lp_channel_jbartProductLP *:focus { outline: none; }

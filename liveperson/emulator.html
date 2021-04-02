@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<div>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript" src="mustache.js"></script>
+<script type="text/javascript" src="jbart_LP_Emulator.js"></script>
+  <div id="LP_Emulator_placeholder"></div>
+  <script>
+    window.liveperson = window.liveperson || {};
+    liveperson.utils = liveperson.utils || {};
+    liveperson.utils.addLanguage = function(langName,langTable,isDefault) {
+        if (!liveperson.languages) liveperson.languages = {};
+        if (!liveperson.languages[langName]) liveperson.languages[langName] = {};
+        for(var key in langTable) {
+            liveperson.languages[langName][key] = langTable[key];
+        }
+        if (!liveperson.language) {
+            liveperson.language = liveperson.languages[langName];
+            liveperson.selected_language = langName;
+        }
+        if (isDefault) liveperson.defaultLanguage = langName;
+    }
+    liveperson.utils.setLanguage = function (selectedLanguageName) {
+    	liveperson.selected_language = selectedLanguageName;
+        liveperson.languages = liveperson.languages || {};
+        liveperson.languages[selectedLanguageName] = liveperson.languages[selectedLanguageName] || {};
+        liveperson.language = liveperson.languages[selectedLanguageName];
+    }
+    liveperson.utils.getLanguage = function () {
+        return liveperson.selected_language;
+    };
+    liveperson.utils.getTranslatedText = function (code) {
+        if (!code || code == '') return ''; // to make the calling functions smaller
+
+        if ((!liveperson.language || !liveperson.language[code]) && liveperson.defaultLanguage) {
+            if (liveperson.languages[liveperson.defaultLanguage] && liveperson.languages[liveperson.defaultLanguage][code]) {
+                return liveperson.languages[liveperson.defaultLanguage][code];
+            }
+        }
+        if (!liveperson.language) {
+            return '';
+        }
+        if (!liveperson.language[code]) {
+            return '';
+        }
+        return liveperson.language[code];
+    };
+    
+    if (!liveperson.location) {
+        liveperson.location = { tab: 'tab', activityLog: 'activity log', widgetMenu: 'widget menu', widgetArea: 'widget area' }
+    }
+  </script>
+  
+  <script>
+	  window.lpEmulatorMode = true;
+	  window.WidgetDefinition = [
+		{
+		  "name": "Liveperson Packages",
+		  "enabled": true,
+		  "channelType": "jbartProductLP",
+		  "agent": {
+		    "widgetClass": "artwaresoft.agentwidgets.Products_LP",
+		    "cssFiles": [],
+		    "jsFiles": ["//dl.dropbox.com/u/24056024/lpdemo_debug/JBartWidgets.js"],
+		    "params": {
+		      "CatalogUrl": "//dl.dropbox.com/u/24056024/lpdemo_debug/ProductCatalog-LPPackages.js",
+		      "JBartWidgetUrl": "//dl.dropbox.com/u/24056024/lpdemo_debug/jbart_LPProducts_src.js",
+		      "JBartWidgetName": "LPProducts"
+		    }
+		  },
+		  "visitor": {
+		    "widgetClass": "artwaresoft.widgets.Products_LP",
+			"params": {}
+		  }
+		},
+		{
+			  "name": "JBart Forms",
+			  "enabled": true,
+			  "agent": {
+			    "widgetClass": "artwaresoft.agentwidgets.JBartForm",
+			    "jsFiles": ["//dl.dropbox.com/u/24056024/lpdemo_debug/JBartWidgets.js"],
+			    "params": {
+			      "JBartWidgetUrl" : "https://dl.dropbox.com/u/24056024/lpdemo_debug/jbart_LP_Forms_Widget_src.js"
+			    }
+			  }
+		}
+	  ];
+  </script>
+  <script>
+    var widgetInfo = WidgetDefinition;
+    var lpLoadedFiles = [];
+
+	for (var i in widgetInfo) {
+		var info = widgetInfo[i];
+    	if (!info.enabled) continue;
+    	for(var side in info) {
+    		if (info[side].jsFiles) {
+    			for(var j in info[side].jsFiles) _addFile(info[side].jsFiles[j],'js');
+    		}
+    		if (info[side].cssFiles) {
+    			for(var j in info[side].cssFiles) _addFile(info[side].cssFiles[j],'css');
+    		}
+    	}
+    }
+
+	function _addFile(file,type) {
+		if (lpLoadedFiles[file]) return; // not to load the same file twice in the studio
+		lpLoadedFiles[file] = true;
+		
+		if (file.indexOf('resource:') == 0) return;
+		if (type == 'js') {
+			document.write('<script type="text/javascript" src="'+file+'"></'+'script>');
+		} else if (type == 'css') {
+			document.write('<link rel="stylesheet" type="text/css" href="'+file+'" />'); 
+		}
+    }
+  </script>
+  <script type="text/javascript">
+    jBartWidgets.LP_Emulator.show(document.getElementById('LP_Emulator_placeholder'),{
+        rawData: { WidgetDefinition: window.WidgetDefinition },
+        data: { ChatSession: '<xml/>' } 
+    });
+  </script>
+  <div id="ajaxart_log" style="display:none"></div>
+</div>

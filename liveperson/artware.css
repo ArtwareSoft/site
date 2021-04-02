@@ -1,0 +1,64 @@
+body { margin:0;}
+.clear_both { clear: both; }
+.header { background: #E1E1E1; height: 70px; position: relative;}
+.tabs { background: #536079; height: 45px; border-top:1px solid #636363; border-bottom: 1px solid #f1f1f1; position: relative; }
+.block { 
+	height: 460px; position: relative; border-bottom: 1px solid #b8b8b8;
+	background: #E1E2E7; 
+	background-image: -webkit-linear-gradient(top,#f2f2f2 0%,#d4d7dd 100%);
+	background-image: -moz-linear-gradient(top, #f2f2f2 0%, #d4d7dd 100%);
+	background-image: -o-linear-gradient(top, #f2f2f2 0%, #d4d7dd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f2f2f2', endColorstr='#d4d7dd');/*For IE7-8-9*/ 
+}
+.block1 { 
+	
+}
+.block2 { }
+
+.footer { background: #536079; height: 170px; position: relative; }
+
+.header .start { position: relative; margin: auto; width:985px; top:20px; }
+.header .artlogo { position: absolute; left: 0px; color: #536079; font: 23px Georgia; }
+.header .product_name { position: absolute; left: 180px; top:2px; color: #536079; font: 20px 'lucida sans'; font-weight: bold; text-shadow: 0px 1px white;}
+.header .line1 { position: absolute; left: 150px; border-right: 1px solid #5F6061; height: 25px;}
+.header .line2 { position: absolute; left: 151px; border-right: 1px solid white; height: 25px;}
+
+.tabs .start { position: relative; margin: auto; width:985px; top:14px; left1: 165px; }
+.tabs .start .tab { float:left; margin-right: 50px; color: #ccc; font: 14px 'lucida sans'; cursor: pointer;}
+.tabs .start .tab:hover { color: white; }
+.tabs .start .tab.selected { color: white; font-weight: bold; }
+
+.block .start { position: relative; margin: auto; width:985px; }
+.block .title { padding-top: 50px; font: 20px 'lucida sans'; font-weight: bold; color: #536079; width:350px; text-shadow: 0px 1px white;}
+.block .text { font: 14px 'Lucida Sans Unicode'; color: #536079; width:360px; line-height: 20px; margin-top:10px;}
+.block .image { position: absolute; top:25px; left: 420px; width: 560px; height:370px;
+border:3px solid white;
+box-shadow: 0 40px 60px -30px rgba(120, 135, 145, 0.5);
+}
+
+.block2 .title { padding-left: 630px; }
+.block2 .text { padding-left: 630px; }
+.block2 .image { left: 0px; }
+
+
+.footer .start { position: relative; top: 30px; margin: auto; width: 1012px;  } 
+.footer .start img { float: left; margin-right: 40px; } 
+.footer .informatica_logo { width: 176px; margin-top:3px; }
+.footer .misrad_logo { width: 39px; }
+.footer .liveperson_logo { width: 192px; margin-top:3px; }
+.footer .idf2_logo { width:29px; }
+.footer .pontis_logo { width:129px; margin-top:3px; }
+.footer .idf_logo { width:37px; margin-top:-3px;}
+.footer .clalit_logo { width:129px; }
+
+.footer .line { position:absolute; top: 60px; }
+.footer .line .line1 { position:absolute; top: 0px; border-bottom: 1px solid rgb(71,82,103); width: 990px; }
+.footer .line .line2 { position:absolute; top: 1px; border-bottom: 1px solid rgb(95,106,128); width: 990px; }
+.footer .line .line3 { position:absolute; top: 2px; border-bottom: 1px solid rgb(87,100,124); width: 990px; }
+.footer .bottom_line { position:absolute; top: 60px; margin: 30px 0 0 210px; }
+.footer .copyright { color: #ccc; font: 12px 'Lucida Sans Unicode'; }
+
+
+.all_pages { overflow: hidden; width: 100%;}
+.all_pages_content { width: 5000px; }
+.page { float: left; }

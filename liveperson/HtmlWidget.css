@@ -1,0 +1,8 @@
+.lp_channel_htmlIframe .in_chatline { color: #6B6B6A; }
+.lp_channel_htmlIframe.text { margin-left: 46px; display: block; }
+.lp_channel_htmlIframe .link { color: #658799; font-weight:bold; } 
+.lp_channel_htmlIframe .link:hover { text-decoration: underline; cursor:pointer;}
+.lp_channel_htmlIframe .icon { background-image: url('http://nachmans.com/lp/html-icon.png'); float:left; width:37px; height:27px; background-repeat:no-repeat; margin-top:1px;}
+.lp_channel_htmlIframe .in_media { height: 256px; width: 300px;}
+.lp_channel_htmlIframe .outer_lp_chat_message { background-color: #eff5f7; border: 1px solid #c2c2c2; min-height: 27px;}
+.lp_channel_htmlIframe .bubble span { background-image: url('http://nachmans.com/lp/html-arrow.gif'); }

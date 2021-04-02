@@ -1,0 +1,39 @@
+    <!DOCTYPE html>
+    <head>
+      <title>About Us</title>
+    </head>
+    <body>    
+    <h1 id="h1">Artware</h1>
+    <h1 id="h2">ArtwareSoft</h1>
+    <div id="h3">Artware was founded in 2006. Since then it was active in developing and licensing state of the art web user experience technologies to partners and clients based on its leading product, jBart.
+
+jBart Studio is a visual online tool for building web widgets. The resulting widgets are embeddable in any website, web application, or mobile web app. jBart is commercially deployed worldwide, serving a customer base which includes financial institutes, software, government, and telco.
+
+Recently, Artware released LetMeSee, a revolutionary product in the domain of mobile customer engagement.
+
+Artware's founder, Shai Ben-Yehuda, is a well known entrepreneur and technology expert. He is the author of the TGP methodology. In his past he was the founder of ItemField Inc which was acquired by Informatica.</div>
+
+      <div id="placeholder"></div>
+      <script type="text/javascript">
+      for (var i=1; i<=6; i++) {
+            var elem = document.getElementById("h"+i)
+            if (elem) 
+                elem.style.display = 'none';
+      }
+      </script>
+      
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script type="text/javascript" src="//jbartdb.appspot.com/file/widget_Artware_Site.js"></script>
+      <script>
+      $("body").css("margin","0");
+
+     jBartWidgets.Artware_Site.show(document.getElementById('placeholder'));
+      </script>
+      <a href="index.html">home</a>
+      <a href="technology.html">technology</a>
+      <a href="jbart.html">jBart</a>
+      <a href="jroom.html">jRoom</a>
+      <a href="wix_apps.html">Wix Applications</a>
+      <a href="about.html">About Us</a>
+    </body> 
+    
